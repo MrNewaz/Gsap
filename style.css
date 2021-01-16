@@ -62,3 +62,90 @@ body {
   padding-left: 5rem;
   position: relative;
 }
+
+.hero-img {
+  position: relative;
+  flex: 1;
+  flex-basis: 25rem;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fashion-span {
+  color: rgb(255, 139, 93);
+}
+
+.mountain-span {
+  color: rgb(86, 124, 228);
+}
+
+.hike-span {
+  color: rgb(167, 110, 231);
+}
+
+.hero-desc h2 {
+  font-family: "Abril Fatface", sans-serif;
+  font-size: 5rem;
+}
+.hero-desc p {
+  padding: 3rem 0rem;
+  font-size: 1.5rem;
+  color: rgb(233, 233, 233);
+}
+
+.explore {
+  padding: 1rem 2rem;
+  background: none;
+  border: none;
+  color: white;
+  border: 1px solid white;
+  font-size: 1rem;
+  text-decoration: none;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+
+.burger {
+  cursor: pointer;
+}
+
+.nav-links {
+  font-size: 3rem;
+  flex-basis: 30rem;
+}
+.nav-links h3 {
+  padding: 3rem 0rem;
+}
+
+.contact {
+  flex-basis: 30rem;
+}
+
+.contact h2 {
+  font-size: 3rem;
+  padding: 2rem 0rem;
+}
+.contact p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
