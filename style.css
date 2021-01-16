@@ -149,3 +149,21 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+
+.reveal-img,
+.reveal-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #17181a;
+  left: 0;
+  top: 0;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+}
