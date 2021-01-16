@@ -15,6 +15,7 @@ body {
   background: #17181a;
   font-family: "Montserrat", sans-serif;
   overflow-x: hidden;
+  width: 100vw;
 }
 
 #logo {
