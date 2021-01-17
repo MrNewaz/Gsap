@@ -25,7 +25,7 @@ function animateSlides() {
     slideScene = new ScrollMagic.Scene({
       triggerElement: slide,
       triggerHook: 0.25,
-      reverse: true,
+      reverse: false,
     })
       .setTween(slideTl)
       .addIndicators({
@@ -59,5 +59,32 @@ function animateSlides() {
       .addTo(controller);
   });
 }
+let mouse = document.querySelector(".cursor");
+let mouseText = mouse.querySelector("span");
+function cursor(e) {
+  mouse.style.top = e.pageY + "px";
+  mouse.style.left = e.pageX + "px";
+}
+
+function activeCursor(e) {
+  const item = e.target;
+  if (item.id === "logo" || item.classList.contains("burger")) {
+    mouse.classList.add("nav-active");
+  } else {
+    mouse.classList.remove("nav-active");
+  }
+  if (item.classList.contains("explore")) {
+    mouse.classList.add("explore-active");
+    gsap.to(".title-swipe", 1, { y: "0%" });
+    mouseText.innerText = "Tap";
+  } else {
+    mouse.classList.remove("explore-active");
+    gsap.to(".title-swipe", 1, { y: "100%" });
+    mouseText.innerText = "";
+  }
+}
+
+window.addEventListener("mousemove", cursor);
+window.addEventListener("mouseover", activeCursor);
 
 animateSlides();
