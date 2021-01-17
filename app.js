@@ -80,12 +80,11 @@ function activeCursor(e) {
     gsap.to(".title-swipe", 1, { y: "100%" });
   }
 }
-
 function navToggle(e) {
   if (!e.target.classList.contains("active")) {
     e.target.classList.add("active");
-    gsap.to(".line1", 0.5, { rotate: "45", y: 3, background: "black" });
-    gsap.to(".line2", 0.5, { rotate: "-45", y: -3, background: "black" });
+    gsap.to(".line1", 0.5, { rotate: "45", y: 5, background: "black" });
+    gsap.to(".line2", 0.5, { rotate: "-45", y: -5, background: "black" });
     gsap.to("#logo", 1, { color: "black" });
     gsap.to(".nav-bar", 1, { clipPath: "circle(2500px at 100% -10%)" });
     document.body.classList.add("hide");
@@ -94,14 +93,81 @@ function navToggle(e) {
     gsap.to(".line1", 0.5, { rotate: "0", y: 0, background: "white" });
     gsap.to(".line2", 0.5, { rotate: "0", y: 0, background: "white" });
     gsap.to("#logo", 1, { color: "white" });
-    gsap.to(".nav-bar", 1, { clipPath: "circle(0px at 100% -10%)" });
+    gsap.to(".nav-bar", 1, { clipPath: "circle(50px at 100% -10%)" });
     document.body.classList.remove("hide");
   }
 }
+
+//Barba Transitions
+const logo = document.querySelector("#logo");
+barba.init({
+  views: [
+    {
+      namespace: "home",
+      beforeEnter() {
+        animateSlides();
+        logo.href = "./index.html";
+      },
+      beforeLeave() {
+        slideScene.destroy();
+        pageScene.destroy();
+        controller.destroy();
+      },
+    },
+    {
+      namespace: "fashion",
+      beforeEnter() {
+        logo.href = "../index.html";
+        detailAnimation();
+      },
+      beforeLeave() {
+        controller.destroy();
+        detailScene.destroy();
+      },
+    },
+  ],
+  transitions: [
+    {
+      leave({ current, next }) {
+        let done = this.async();
+        //An Animation
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.fromTo(current.container, 1, { opacity: 1 }, { opacity: 0 });
+        tl.fromTo(
+          ".swipe",
+          0.75,
+          { x: "-100%" },
+          { x: "0%", onComplete: done },
+          "-=0.5"
+        );
+      },
+      enter({ current, next }) {
+        let done = this.async();
+        //Scroll to the top
+        window.scrollTo(0, 0);
+        //An Animation
+        const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+        tl.fromTo(
+          ".swipe",
+          1,
+          { x: "0%" },
+
+          { x: "100%", stagger: 0.2, onComplete: done }
+        );
+        tl.fromTo(next.container, 1, { opacity: 0 }, { opacity: 1 });
+        tl.fromTo(
+          ".nav-header",
+          1,
+          { y: "-100%" },
+          { y: "0%", ease: "power2.inOut" },
+          "-=1.5"
+        );
+      },
+    },
+  ],
+});
 
 //Event Listeners
 burger.addEventListener("click", navToggle);
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
-
-animateSlides();
