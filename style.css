@@ -26,12 +26,14 @@ body {
   min-height: 10vh;
   font-size: 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   color: white;
   width: 80%;
   margin: auto;
   padding: 2rem 0rem;
+  z-index: 2;
+  position: relative;
 }
 
 .line1,
@@ -170,7 +172,7 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   transition-property: background, transform;
   transform-origin: 75% 75%;
 }
@@ -217,4 +219,8 @@ body {
 
 .scrollmagic-pin-spacer {
   position: static !important;
+}
+
+body.hide {
+  overflow: hidden;
 }
