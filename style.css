@@ -1,14 +1,7 @@
-/* Global Style  */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -17,16 +10,14 @@ body {
   overflow-x: hidden;
   position: relative;
 }
-
 main {
   position: absolute;
 }
 
 #logo {
   color: white;
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Abril Fatface";
 }
-
 .nav-header {
   min-height: 10vh;
   font-size: 1rem;
@@ -40,7 +31,6 @@ main {
   z-index: 2;
   position: relative;
 }
-
 .line1,
 .line2 {
   width: 3rem;
@@ -49,6 +39,7 @@ main {
   background: white;
   pointer-events: none;
 }
+
 .slide {
   min-height: 100vh;
   margin: 0 auto 0 auto;
@@ -70,7 +61,6 @@ main {
   padding-left: 5rem;
   position: relative;
 }
-
 .hero-img {
   position: relative;
   flex: 1;
@@ -87,7 +77,6 @@ main {
 .fashion-span {
   color: rgb(255, 139, 93);
 }
-
 .mountain-span {
   color: rgb(86, 124, 228);
 }
@@ -95,17 +84,15 @@ main {
 .hike-span {
   color: rgb(167, 110, 231);
 }
-
 .hero-desc h2 {
-  font-family: "Abril Fatface", sans-serif;
+  font-family: "Abril Fatface";
   font-size: 5rem;
 }
 .hero-desc p {
   padding: 3rem 0rem;
   font-size: 1.5rem;
-  color: rgb(233, 233, 233);
+  color: rgb(223, 223, 223);
 }
-
 .explore {
   padding: 1rem 2rem;
   background: none;
@@ -117,7 +104,6 @@ main {
   align-self: flex-start;
   cursor: pointer;
 }
-
 .nav-bar {
   position: fixed;
   top: 0;
@@ -133,11 +119,9 @@ main {
   clip-path: circle(50px at 100% -10%);
   -webkit-clip-path: circle(50px at 100% -10%);
 }
-
 .burger {
   cursor: pointer;
 }
-
 .nav-links {
   font-size: 3rem;
   flex-basis: 30rem;
@@ -145,11 +129,9 @@ main {
 .nav-links h3 {
   padding: 3rem 0rem;
 }
-
 .contact {
   flex-basis: 30rem;
 }
-
 .contact h2 {
   font-size: 3rem;
   padding: 2rem 0rem;
@@ -181,7 +163,6 @@ main {
   transition-property: background, transform;
   transform-origin: 75% 75%;
 }
-
 .cursor.nav-active {
   background: rgb(86, 124, 228);
   transform: scale(3);
@@ -190,7 +171,6 @@ main {
   background: white;
   transform: scale(3);
 }
-
 .cursor-text {
   position: absolute;
   top: 50%;
@@ -202,13 +182,12 @@ main {
   position: relative;
   overflow: hidden;
 }
-
 .title-swipe {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  position: absolute;
   mix-blend-mode: darken;
   transform: translateY(100%);
 }
@@ -225,13 +204,11 @@ main {
 .scrollmagic-pin-spacer {
   position: static !important;
 }
-
 body.hide {
   overflow: hidden;
 }
 
 /* Other Pages */
-
 .fashion1,
 .fashion2,
 .fashion3 {
@@ -246,21 +223,18 @@ body.hide {
   flex-wrap: wrap;
   position: relative;
 }
-
 .fashion-img {
   height: 70vh;
   flex-basis: 30rem;
 }
-
 .fashion-text {
   flex: 1;
   position: relative;
   flex-basis: 25rem;
 }
-
 .fashion-img img {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -284,7 +258,6 @@ body.hide {
   padding: 2rem 2rem 0rem 0rem;
   margin-bottom: 10rem;
 }
-
 .fashion-nr {
   font-size: 15rem;
   position: absolute;
@@ -313,4 +286,83 @@ body.hide {
 .swipe3 {
   background: rgb(255, 139, 93);
   z-index: 3;
+}
+
+@media screen and (max-width: 1500px) {
+  .hero-img {
+    height: 50vh;
+  }
+  .fashion-text h1 {
+    font-size: 2rem;
+    padding: 1rem 0rem;
+  }
+  .fashion-text p {
+    font-size: 1.2rem;
+  }
+  .fashion-img img {
+    height: 50vh;
+    object-position: top;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    width: 100%;
+    margin: 0;
+  }
+  .slide {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-desc {
+    padding: 0;
+  }
+  .hero-img {
+    padding-top: 4rem;
+  }
+  .hero-desc h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0rem;
+  }
+  .hero-desc p {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+  .explore {
+    width: 60%;
+    margin: auto;
+  }
+  .detail-slide {
+    width: 100%;
+    text-align: center;
+  }
+  .fashion-text p {
+    margin-bottom: 5rem;
+    padding: 0;
+  }
+  .fastion-text h1 {
+    margin: 2rem 0rem;
+  }
+  .fashion-nr {
+    font-size: 8rem;
+  }
+  .nav-bar {
+    display: block;
+  }
+  .nav-links {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .contact p {
+    font-size: 1.2rem;
+    padding: 2rem;
+    text-align: center;
+  }
 }
